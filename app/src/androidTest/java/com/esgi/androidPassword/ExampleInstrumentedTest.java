@@ -1,4 +1,4 @@
-package com.epsilon.projetpassword1;
+package com.esgi.androidPassword;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.epsilon.projetpassword1", appContext.getPackageName());
+        assertEquals("com.esgi.androidPassword", appContext.getPackageName());
     }
 }

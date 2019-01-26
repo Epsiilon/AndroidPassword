@@ -1,4 +1,4 @@
-package com.epsilon.projetpassword1;
+package com.esgi.androidPassword;
 
 import org.junit.Test;
 

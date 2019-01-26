@@ -1,12 +1,16 @@
-package com.epsilon.projetpassword1;
+package com.esgi.androidPassword;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.CREATION;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(CREATION,"creating activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }

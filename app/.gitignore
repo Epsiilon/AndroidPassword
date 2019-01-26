@@ -1,1 +1,21 @@
-/build
+######################
+# Gradle
+######################
+.gradle/
+/build/
+
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+classes/
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
