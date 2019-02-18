@@ -3,4 +3,7 @@
     <string name="saisir_cle">Saisir la clé...</string>
     <string name="cle_deverouillage">Clé de dévérouillage</string>
     <string name="valider">VALIDER !</string>
+    <string name="incorrecte_password">Mot de passe incorrecte</string>
+    <string name="error_request">"Une erreur s'est produite"</string>
+    <string name="title_activity_connection">ConnectionActivity</string>
 </resources>
