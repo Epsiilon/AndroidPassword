@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Keep Secure</string>
+    <string name="incorrecte_password">Mot de passe incorrecte</string>
+    <string name="error_request">"Une erreur s'est produite"</string>
 </resources>

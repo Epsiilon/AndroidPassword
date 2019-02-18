@@ -1,13 +1,7 @@
-package com.esgi.androidPassword.dao;
+package com.esgi.androidPassword.domain;
 
-import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.Nullable;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
-@Entity(tableName = "USER")
 public class User {
-    @PrimaryKey(autoGenerate = true)
     private long id;
 
     @Nullable
@@ -18,6 +12,8 @@ public class User {
 
     private String passwordKey;
 
+    public User() { }
+
     public User(long id) {
         this.id = id;
     }
@@ -26,9 +22,16 @@ public class User {
         return id;
     }
 
-    @Nullable
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(@Nullable String lastName) {
+        this.lastName = lastName;
     }
 
     @Nullable
@@ -36,8 +39,15 @@ public class User {
         return firstName;
     }
 
+    public void setFirstName(@Nullable String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getPasswordKey() {
         return passwordKey;
     }
 
+    public void setPasswordKey(String passwordKey) {
+        this.passwordKey = passwordKey;
+    }
 }
