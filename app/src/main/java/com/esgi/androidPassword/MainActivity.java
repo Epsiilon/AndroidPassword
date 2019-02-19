@@ -1,14 +1,43 @@
 package com.esgi.androidPassword;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.esgi.androidPassword.dummy.DummyContent.DummyItem;
+
+public class MainActivity extends AppCompatActivity implements DataFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startCreationActivity();
+            }
+        });
+
     }
 
+    @Override
+    public void onListFragmentInteraction(DummyItem item) {
+        Toast.makeText(this, item.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    /**
+     * Start CreationActivity
+     */
+    private void startCreationActivity() {
+        Intent intent = new Intent(this, CreationActivity.class);
+        startActivity(intent);
+    }
 }

@@ -6,4 +6,7 @@
     <string name="incorrecte_password">Mot de passe incorrecte</string>
     <string name="error_request">"Une erreur s'est produite"</string>
     <string name="title_activity_connection">ConnectionActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

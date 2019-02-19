@@ -99,7 +99,7 @@ public class ConnectionActivity extends AppCompatActivity {
      * Start ConnectionActivity
      */
     private void startCreationActivity() {
-        Intent intent = new Intent(this, CreationActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
