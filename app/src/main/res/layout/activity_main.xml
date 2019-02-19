@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
@@ -33,6 +33,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <Button
+                android:id="@+id/btnExport"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:text="Export !"
+                tools:layout_editor_absoluteX="129dp"
+                tools:layout_editor_absoluteY="603dp" />
+
             <fragment
                 android:id="@+id/fragment"
                 android:name="com.esgi.androidPassword.DataFragment"
@@ -46,11 +54,12 @@
 
             <Button
                 android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
+                android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:text="Add entry !"
                 tools:layout_editor_absoluteX="129dp"
                 tools:layout_editor_absoluteY="603dp" />
+
         </LinearLayout>
 
     </ScrollView>

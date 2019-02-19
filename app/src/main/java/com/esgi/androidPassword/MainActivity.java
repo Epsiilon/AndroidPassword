@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
             }
         });
 
+        Button btnExport = findViewById(R.id.btnExport);
+        btnExport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startExportActivity();
+            }
+        });
+
     }
 
     @Override
@@ -38,6 +46,14 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
      */
     private void startCreationActivity() {
         Intent intent = new Intent(this, CreationActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Start ExportActivity
+     */
+    private void startExportActivity() {
+        Intent intent = new Intent(this, ExportActivity.class);
         startActivity(intent);
     }
 }
