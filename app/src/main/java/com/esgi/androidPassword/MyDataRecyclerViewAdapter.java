@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.esgi.androidPassword.DataFragment.OnListFragmentInteractionListener;
 import com.esgi.androidPassword.dummy.DummyContent.DummyItem;
+import com.esgi.androidPassword.util.PasswordUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentChange;
@@ -146,7 +147,11 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
             @Override
             public void onClick(View view) {
                 if ("****".equals(holder.mPassword.getText())) {
-                    holder.mPassword.setText(mValues.get(position).password);
+                    try {
+                        holder.mPassword.setText(PasswordUtils.decryptFromAES(mValues.get(position).password));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     holder.mPassword.setText("****");
                 }

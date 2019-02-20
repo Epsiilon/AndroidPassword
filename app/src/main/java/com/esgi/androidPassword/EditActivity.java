@@ -45,7 +45,11 @@ public class EditActivity extends AppCompatActivity {
 
                     title.setText((String) doc.get("title"));
                     username.setText((String) doc.get("username"));
-                    password.setText((String) doc.get("password"));
+                    try {
+                        password.setText(PasswordUtils.decryptFromAES((String) doc.get("password")));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     notes.setText((String) doc.get("notes"));
 
                 }
