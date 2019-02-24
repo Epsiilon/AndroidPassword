@@ -57,7 +57,7 @@ public class ConnectionActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(
                                         v.getContext(),
-                                        getString(R.string.incorrecte_password),
+                                        getString(R.string.wrong_password),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
