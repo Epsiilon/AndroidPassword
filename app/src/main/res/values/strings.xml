@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">Keep Secure</string>
-    <string name="saisir_cle">Saisir la clé...</string>
-    <string name="cle_deverouillage">Clé de dévérouillage</string>
-    <string name="valider">VALIDER !</string>
-    <string name="incorrecte_password">Mot de passe incorrecte</string>
+    <string name="input_masterkey">Saisir la clé...</string>
+    <string name="masterkey">Clé de dévérouillage</string>
+    <string name="validate">VALIDER !</string>
+    <string name="wrong_password">Mot de passe incorrecte</string>
     <string name="error_request">"Une erreur s'est produite"</string>
     <string name="title_activity_connection">ConnectionActivity</string>
 
+    <string name="generation">Génération</string>
+    <string name="generate_secure_pw">Générer votre mot de passe sécurisé.</string>
+    <string name="size_of_pw">Longueur du mot de passe :</string>
+    <string name="number_length">Nombre de chiffre :</string>
+    <string name="number_special_characters">Nombre de caractères spéciaux :</string>
+    <string name="generate">Générer !</string>
+    <string name="show">Afficher</string>
+    <string name="password">Mot de passe...</string>
+    <string name="copy">Copier</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
