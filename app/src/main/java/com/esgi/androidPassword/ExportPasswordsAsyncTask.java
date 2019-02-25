@@ -23,25 +23,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.EXPORT_PWD_ASYNC_TASK;
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.FILE_EXPORT_PSS;
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.UNABLE_TO_WRITE_FILE_CONTENTS;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.*;
 
 class ExportPasswordsAsyncTask extends AsyncTask<Void, Void, List<DocumentSnapshot>> {
 
     private static final String COMMA = ",";
     private static final String BACKSLASH_N = "\n";
 
-    private static final String TITLE = "title";
-    private static final String USERNAME = "username";
-    private static final String PASSWORD = "password";
-    private static final String NOTES = "notes";
-
     private static final String TITLE_USERNAME_PASSWORD_NOTES = "Title, Username, Password, Notes\n";
 
     private static final String UTF_8 = "UTF-8";
     private static final String SAVE_FILE_TO_DRIVE = "saveFileToDrive";
-    private static final String DATAS = "datas";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 

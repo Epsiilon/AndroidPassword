@@ -16,11 +16,19 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnGenerate = findViewById(R.id.btnAdd2);
+        btnGenerate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startCreationActivity();
+            }
+        });
+
         Button btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                startCreationActivity();
+                startEditActivity();
             }
         });
 
@@ -32,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
             }
         });
 
+
+
     }
 
     @Override
@@ -39,7 +49,13 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
         Toast.makeText(this, item.toString(), Toast.LENGTH_SHORT).show();
     }
 
-
+    /**
+     * Start EditActivity
+     */
+    private void startEditActivity() {
+        Intent intent = new Intent(this, EditActivity.class);
+        startActivity(intent);
+    }
 
     /**
      * Start CreationActivity
@@ -56,4 +72,6 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
         Intent intent = new Intent(this, ExportActivity.class);
         startActivity(intent);
     }
+
+
 }

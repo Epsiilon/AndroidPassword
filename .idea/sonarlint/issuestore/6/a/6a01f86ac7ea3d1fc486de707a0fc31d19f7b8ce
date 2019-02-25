@@ -1,0 +1,10 @@
+
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÍÃªºÿÿÿÿÿ
+h
+squid:S128¶"LEnd this switch case with an unconditional break, return or throw statement.(Ú€¬ùþÿÿÿÿ
+€"squid:ClassVariableVisibilityCheckÕ"QMake mItem a static final constant or non-public and provide accessors if needed.(üŠ¯¿
+Nsquid:S1135)"2Complete the task associated to this TODO comment.(„ÏÝ˜ÿÿÿÿÿ
+Jsquid:S1135­"2Complete the task associated to this TODO comment.(‡ñÅ¼
+lsquid:S2259°"TA "NullPointerException" could be thrown; "queryDocumentSnapshots" is nullable here.(¬Þˆ¨
+/squid:S2176Ê"Rename this class.(Â×žÖúÿÿÿÿ
+@squid:S1148™"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
