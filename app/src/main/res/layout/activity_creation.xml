@@ -22,15 +22,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/passwordGenerated"
-        app:layout_constraintTop_toBottomOf="@+id/generate" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generate"
+        app:layout_constraintVertical_bias="0.13999999"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
@@ -49,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.00999999"
+        app:layout_constraintVertical_bias="0.110000014"
         tools:background="@android:color/holo_blue_dark" />
 
     <EditText
@@ -62,14 +65,14 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="numberSigned"
+        android:text="3"
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -209,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generate" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <Button
         android:id="@+id/show"

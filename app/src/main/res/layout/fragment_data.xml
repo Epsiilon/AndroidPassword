@@ -38,12 +38,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Show password" />
+
     <Button
         android:id="@+id/copy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Copy" />
+        android:text="Copier" />
 
     <Button
         android:id="@+id/edit"
