@@ -11,7 +11,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.COPIE;
+import com.esgi.androidPassword.constant.AndroidPasswordConstant;
+import com.esgi.androidPassword.util.PasswordUtils;
+
+import org.passay.CharacterRule;
+import org.passay.PasswordGenerator;
+import org.passay.CharacterData;
+import org.passay.EnglishCharacterData;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.*;
 
 public class CreationActivity extends AppCompatActivity {
 
@@ -69,12 +79,71 @@ public class CreationActivity extends AppCompatActivity {
                 EditText numberSize = findViewById(R.id.numberSize);
                 EditText specialCharacterSize = findViewById(R.id.specialCharacterSize);
 
-                Integer.parseInt(passwordSize.getText().toString());
-                Integer.parseInt(numberSize.getText().toString());
-                Integer.parseInt(specialCharacterSize.getText().toString());
+                if (checkFieldsValidity(v, passwordSize, numberSize, specialCharacterSize)) return;
 
-                passwordGenerated.setText("coucou");
+                List<CharacterRule> rules = initRules(numberSize, specialCharacterSize);
+
+                PasswordGenerator generator = new PasswordGenerator();
+
+                String password = generator.generatePassword(Integer.parseInt(passwordSize.getText().toString()), rules);
+
+                passwordGenerated.setText(password);
             }
         });
+    }
+
+    // TODO : mettre les valeurs dans le strings.xml
+    private boolean checkFieldsValidity(View v, EditText passwordSize, EditText numberSize, EditText specialCharacterSize) {
+        if (passwordSize.getText().toString().trim().isEmpty()) {
+            Toast.makeText(
+                    v.getContext(),
+                    "Saisir une longueur du mot de passe",
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+
+        if (numberSize.getText().toString().trim().isEmpty()) {
+            Toast.makeText(
+                    v.getContext(),
+                    "Saisir une longueur de chiffre",
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+
+        if (specialCharacterSize.getText().toString().trim().isEmpty()) {
+            Toast.makeText(
+                    v.getContext(),
+                    "Saisir un nombre de caractères spéciaux",
+                    Toast.LENGTH_SHORT
+            ).show();
+            return true;
+        }
+        return false;
+    }
+
+    private List<CharacterRule> initRules(EditText numberSize, EditText specialCharacterSize) {
+        char[] special = new char[]{'!', '"', '#', '$', '%', '&', '\'', '(', ')', '*',
+                '+', '-', '.', '/', ':', '<', '=', '>', '?', '@', '[', '\\', ']',
+                '^', '_', '`', '{', '|', '}', '~'};
+        return Arrays.asList(
+                // at least one upper-case character
+                new CharacterRule(EnglishCharacterData.UpperCase, 1),
+                // at least one lower-case character
+                new CharacterRule(EnglishCharacterData.LowerCase, 1),
+                // at least one digit character
+                new CharacterRule(EnglishCharacterData.Digit, Integer.parseInt(numberSize.getText().toString())),
+                new CharacterRule(new CharacterData() {
+                    @Override
+                    public String getErrorCode() {
+                        return INSUFFICIENT_SPECIAL;
+                    }
+
+                    @Override
+                    public String getCharacters() {
+                        return new String(special);
+                    }
+                }, Integer.parseInt(specialCharacterSize.getText().toString())));
     }
 }

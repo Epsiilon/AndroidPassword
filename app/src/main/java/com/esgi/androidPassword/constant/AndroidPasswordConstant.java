@@ -41,4 +41,5 @@ public class AndroidPasswordConstant {
     public static final String ERROR_DURING_DESCRIPTING_PASSWORD = "Error during descripting password";
     public static final String STAR = "****";
     public static final String COPIE = "Copié : ";
+    public static final String INSUFFICIENT_SPECIAL = "INSUFFICIENT_SPECIAL";
 }
