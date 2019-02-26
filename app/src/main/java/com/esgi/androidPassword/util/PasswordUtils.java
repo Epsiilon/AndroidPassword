@@ -4,6 +4,7 @@ import android.util.Base64;
 
 import java.security.MessageDigest;
 import java.security.spec.AlgorithmParameterSpec;
+import java.util.Random;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -63,5 +64,42 @@ public final class PasswordUtils {
         return p.decrypt(plainText);
     }
 
+
+
+
+    public static String generateRandomPassword(int sizePass, int nbNumberChar, int nbSpecialChar){
+
+        String baseCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String numberCaseChars = "0123456789";
+        String specialChars = "!@#$%^&*()_-+=<>?/{}~|";
+        String allowedChars = "";
+
+        Random rn = new Random();
+        StringBuilder sb = new StringBuilder(sizePass);
+
+        allowedChars += baseCaseChars;
+        sb.append(baseCaseChars.charAt(rn.nextInt(baseCaseChars.length()-1)));
+
+
+        allowedChars += numberCaseChars;
+        if (nbNumberChar < (numberCaseChars.length()-1)){
+            sb.append(numberCaseChars.charAt(rn.nextInt(nbNumberChar)));
+        }else{
+            sb.append(numberCaseChars.charAt(rn.nextInt(numberCaseChars.length()-1)));
+        }
+
+        allowedChars += specialChars;
+        if (nbSpecialChar < (specialChars.length()-1)){
+            sb.append(specialChars.charAt(rn.nextInt(nbSpecialChar)));
+        }else{
+            sb.append(specialChars.charAt(rn.nextInt(specialChars.length()-1)));
+        }
+
+        for(int i = sb.length(); i < sizePass; ++i){
+            sb.append(allowedChars.charAt(rn.nextInt(allowedChars.length())));
+        }
+
+        return  sb.toString();
+    }
 
 }
