@@ -18,6 +18,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.security.SecureRandom;
+
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.DATAS;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.DOCUMENT_SNAPSHOT_SUCCESSFULLY_WRITTEN;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.EDIT_ACTIVITY;
@@ -146,8 +148,11 @@ public class EditActivity extends AppCompatActivity {
                 final EditText password = findViewById(R.id.password);
                 final EditText notes = findViewById(R.id.notes);
 
+                SecureRandom secureRandom = new SecureRandom();
+                String id = Integer.toString(secureRandom.nextInt());
                 // Collecting of data
                 DummyItem dummyItem = new DummyItem();
+                dummyItem.setId(id);
                 dummyItem.setTitle(title.getText().toString());
                 dummyItem.setUsername(username.getText().toString());
                 dummyItem.setPassword(password.getText().toString());
@@ -158,7 +163,7 @@ public class EditActivity extends AppCompatActivity {
                 }
                 dummyItem.setNotes(notes.getText().toString());
 
-                db.collection(DATAS).document()
+                db.collection(DATAS).document(id)
                         .set(dummyItem).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
