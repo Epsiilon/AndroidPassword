@@ -1,6 +1,8 @@
 package com.esgi.androidPassword;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -35,10 +37,20 @@ public class EditActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    private EditText title;
+    private EditText username;
+    private EditText password;
+    private EditText notes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        title = findViewById(R.id.title);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        notes = findViewById(R.id.notes);
 
         final String idData = getIntent().getStringExtra(ID_DATA);
 
@@ -51,15 +63,10 @@ public class EditActivity extends AppCompatActivity {
 
     /**
      * Display form edit
+     *
      * @param idData
      */
     private void displayFormEdit(final String idData) {
-
-        final EditText title = findViewById(R.id.title);
-        final EditText username = findViewById(R.id.username);
-        final EditText password = findViewById(R.id.password);
-        final EditText notes = findViewById(R.id.notes);
-
         fillForm(idData, title, username, password, notes);
 
         Button validateButton = findViewById(R.id.save);
@@ -103,6 +110,7 @@ public class EditActivity extends AppCompatActivity {
 
     /**
      * fill data in form.
+     *
      * @param idData
      * @param title
      * @param username
@@ -143,11 +151,6 @@ public class EditActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                final EditText title = findViewById(R.id.title);
-                final EditText username = findViewById(R.id.username);
-                final EditText password = findViewById(R.id.password);
-                final EditText notes = findViewById(R.id.notes);
-
                 SecureRandom secureRandom = new SecureRandom();
                 String id = Integer.toString(secureRandom.nextInt());
                 // Collecting of data
@@ -180,5 +183,4 @@ public class EditActivity extends AppCompatActivity {
             }
         });
     }
-
 }
