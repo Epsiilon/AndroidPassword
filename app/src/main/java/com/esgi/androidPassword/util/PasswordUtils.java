@@ -4,6 +4,7 @@ import android.util.Base64;
 
 import java.security.MessageDigest;
 import java.security.spec.AlgorithmParameterSpec;
+import java.util.Random;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -62,6 +63,5 @@ public final class PasswordUtils {
         PasswordUtils p = new PasswordUtils();
         return p.decrypt(plainText);
     }
-
 
 }

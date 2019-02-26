@@ -27,13 +27,12 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
 
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.ERROR_DURING_REQUEST;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.*;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -137,23 +136,35 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
         holder.copy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClipboardManager cm = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                cm.setText(mValues.get(position).password);
-                Toast.makeText(view.getContext(), "Copied to clipboard : " + mValues.get(position).password, Toast.LENGTH_SHORT).show();
+                ClipboardManager cm = (ClipboardManager) view.getContext()
+                        .getSystemService(Context.CLIPBOARD_SERVICE);
+
+                try {
+                    String password = PasswordUtils.decryptFromAES(mValues.get(position).password);
+                    cm.setText(password);
+
+                    StringBuilder txtToast = new StringBuilder();
+                    txtToast.append(COPIE);
+                    txtToast.append(password);
+
+                    Toast.makeText(view.getContext(), txtToast, Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Log.e(RECYCLER_VIEW, ERROR_DURING_DESCRIPTING_PASSWORD, e);
+                }
             }
         });
 
         holder.showPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ("****".equals(holder.mPassword.getText())) {
+                if (STAR.equals(holder.mPassword.getText())) {
                     try {
                         holder.mPassword.setText(PasswordUtils.decryptFromAES(mValues.get(position).password));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-                    holder.mPassword.setText("****");
+                    holder.mPassword.setText(STAR);
                 }
             }
         });
