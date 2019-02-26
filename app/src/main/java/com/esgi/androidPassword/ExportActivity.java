@@ -1,5 +1,6 @@
 package com.esgi.androidPassword;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.esgi.androidPassword.exception.AndroidPasswordException;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -36,6 +38,7 @@ import static com.esgi.androidPassword.constant.AndroidPasswordConstant.SIGNED_I
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.SIGN_IN_REQUEST_CODE;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.START_SIGN_IN;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.UNABLE_TO_WRITE_FILE_CONTENTS;
+import static java.security.AccessController.getContext;
 
 public class ExportActivity extends AppCompatActivity {
 
@@ -47,17 +50,35 @@ public class ExportActivity extends AppCompatActivity {
     private DriveClient mDriveClient;
     private DriveResourceClient mDriveResourceClient;
 
+    private Button btnSignIn;
+    private Button btnExport;
+    private Context context;
+
+    private boolean isAuthenticated = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_export);
 
-        Button btnSignIn = findViewById(R.id.signIn);
+        btnSignIn = findViewById(R.id.signIn);
         btnSignIn.setOnClickListener((View v) -> {
-            signIn();
+            if (isAuthenticated) {
+                Toast.makeText(
+                        context,
+                        "Déjà authentifié !",
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+
+            if (!isAuthenticated) {
+                context = v.getContext();
+                signIn();
+            }
         });
 
-        Button btnExport = findViewById(R.id.btnExport);
+        btnExport = findViewById(R.id.btnExport);
+        btnExport.setEnabled(false);
         btnExport.setOnClickListener((View v) -> {
             ExportPasswordsAsyncTask e = new ExportPasswordsAsyncTask(
                     getApplicationContext(), ExportActivity.this);
@@ -162,6 +183,13 @@ public class ExportActivity extends AppCompatActivity {
                 // Called after user is signed in.
                 if (RESULT_OK == resultCode) {
                     Log.i(EXPORT_ACTIVITY, SIGNED_IN_SUCCESSFULLY);
+                    isAuthenticated = true;
+                    Toast.makeText(
+                            context,
+                            "Connexion avec succès",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                    btnExport.setEnabled(true);
                     // Use the last signed in account here since it already have a Drive scope.
                     mDriveClient = Drive.getDriveClient(this,
                             GoogleSignIn.getLastSignedInAccount(this));
