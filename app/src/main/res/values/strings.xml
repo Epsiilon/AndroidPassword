@@ -10,14 +10,29 @@
     <string name="generation">Génération</string>
     <string name="generate_secure_pw">Générer votre mot de passe sécurisé.</string>
     <string name="size_of_pw">Longueur du mot de passe :</string>
-    <string name="number_length">Nombre de chiffre :</string>
-    <string name="number_special_characters">Nombre de caractères spéciaux :</string>
+    <string name="number_length">Nombre de chiffre minimum :</string>
+    <string name="number_special_characters">Caractères spéciaux minimales :</string>
     <string name="generate">Générer !</string>
     <string name="show">Afficher</string>
     <string name="password">Mot de passe...</string>
     <string name="copy">Copier</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password_title">Mot de passe</string>
+
+    <string name="information">Information</string>
+    <string name="save">Sauvegarder</string>
+    <string name="note">Note</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="title">Titre</string>
+    <string name="export_msg">Vous devez vous connecter à votre compte Google afin de pouvoir exporter la base de données.</string>
+    <string name="exportation">Exportation</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="export_action">Exporter !</string>
+    <string name="generate_title">Générer</string>
+    <string name="export_title">Exporter</string>
+    <string name="informations">Informations</string>
+    <string name="add">Ajouter</string>
+    <string name="delete">Supprimer</string>
+    <string name="edit">Modifier</string>
 
 </resources>
