@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_keep_secure_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".KeepSecureConfigureActivity"></activity>
+
         <receiver android:name=".KeepSecureAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
