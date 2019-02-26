@@ -8,10 +8,8 @@
 
     <View
         android:id="@+id/view6"
-        android:layout_width="369dp"
+        android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:background="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
@@ -21,10 +19,8 @@
 
     <View
         android:id="@+id/view4"
-        android:layout_width="369dp"
+        android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@android:color/holo_blue_dark"
@@ -73,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Informations"
@@ -84,8 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -113,7 +108,6 @@
         android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
@@ -126,7 +120,7 @@
             <fragment
                 android:id="@+id/fragment"
                 android:name="com.esgi.androidPassword.DataFragment"
-                android:layout_width="369dp"
+                android:layout_width="match_parent"
                 android:layout_height="399dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
