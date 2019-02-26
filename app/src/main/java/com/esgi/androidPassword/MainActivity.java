@@ -46,7 +46,11 @@ public class MainActivity extends AppCompatActivity implements DataFragment.OnLi
 
     @Override
     public void onListFragmentInteraction(DummyItem item) {
-        Toast.makeText(this, item.toString(), Toast.LENGTH_SHORT).show();
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Nom d'utilisateur : ");
+        sb.append(item.getUsername());
+
+        Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();
     }
 
     /**
