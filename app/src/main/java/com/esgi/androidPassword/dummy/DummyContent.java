@@ -38,7 +38,6 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-//        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
         DummyItem dummyItem = new DummyItem();
         dummyItem.setId(String.valueOf(position));
         return dummyItem;

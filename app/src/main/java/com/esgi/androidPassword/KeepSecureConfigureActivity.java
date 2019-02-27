@@ -8,8 +8,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class KeepSecureConfigureActivity extends AppCompatActivity {
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

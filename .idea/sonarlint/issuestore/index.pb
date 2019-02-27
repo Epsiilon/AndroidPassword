@@ -17,3 +17,9 @@ l
 <app/src/main/java/com/esgi/androidPassword/EditActivity.java,f/3/f31354b0c11bbfeee22c034a67b8d995369036eb
 s
 Capp/src/main/java/com/esgi/androidPassword/KeepSecureAppWidget.java,0/0/00245b1c2166d765794b3539554271deea478df8
+r
+Bapp/src/main/java/com/esgi/androidPassword/util/PasswordUtils.java,4/7/4758f0c0fa1a5ad25dcd5e99d96c425f602cb18c
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164

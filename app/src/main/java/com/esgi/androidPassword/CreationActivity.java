@@ -11,17 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.esgi.androidPassword.constant.AndroidPasswordConstant;
-import com.esgi.androidPassword.util.PasswordUtils;
-
-import org.passay.CharacterRule;
-import org.passay.PasswordGenerator;
 import org.passay.CharacterData;
+import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
+import org.passay.PasswordGenerator;
+
 import java.util.Arrays;
 import java.util.List;
 
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.*;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.INSUFFICIENT_SPECIAL;
 
 public class CreationActivity extends AppCompatActivity {
 
@@ -47,7 +45,7 @@ public class CreationActivity extends AppCompatActivity {
                     cm.setText(passwordGenerated.getText());
 
                     StringBuilder txtToast = new StringBuilder();
-                    txtToast.append(COPIE);
+                    txtToast.append(getString(R.string.wrong_password));
                     txtToast.append(passwordGenerated.getText().toString());
 
                     Toast.makeText(v.getContext(), txtToast, Toast.LENGTH_SHORT).show();
@@ -92,12 +90,11 @@ public class CreationActivity extends AppCompatActivity {
         });
     }
 
-    // TODO : mettre les valeurs dans le strings.xml
     private boolean checkFieldsValidity(View v, EditText passwordSize, EditText numberSize, EditText specialCharacterSize) {
         if (passwordSize.getText().toString().trim().isEmpty()) {
             Toast.makeText(
                     v.getContext(),
-                    "Saisir une longueur du mot de passe",
+                    getString(R.string.enter_password),
                     Toast.LENGTH_SHORT
             ).show();
             return true;
@@ -106,7 +103,7 @@ public class CreationActivity extends AppCompatActivity {
         if (numberSize.getText().toString().trim().isEmpty()) {
             Toast.makeText(
                     v.getContext(),
-                    "Saisir une longueur de chiffre",
+                    getString(R.string.enter_chiffre),
                     Toast.LENGTH_SHORT
             ).show();
             return true;
@@ -115,7 +112,7 @@ public class CreationActivity extends AppCompatActivity {
         if (specialCharacterSize.getText().toString().trim().isEmpty()) {
             Toast.makeText(
                     v.getContext(),
-                    "Saisir un nombre de caractères spéciaux",
+                    getString(R.string.enter_speciaux),
                     Toast.LENGTH_SHORT
             ).show();
             return true;

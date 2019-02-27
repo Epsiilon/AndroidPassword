@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.DESCRIPTION;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.EXPORT_PWD_ASYNC_TASK;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.INFOS;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.UNABLE_TO_WRITE_FILE_CONTENTS;
 
 public class InfosAsyncTask  extends AsyncTask<Void, Void, List<DocumentSnapshot>> {
@@ -40,7 +42,7 @@ public class InfosAsyncTask  extends AsyncTask<Void, Void, List<DocumentSnapshot
     protected List<DocumentSnapshot> doInBackground(Void... voids) {
         final List<DocumentSnapshot> documents = new ArrayList<>();
 
-        final CollectionReference data = db.collection("infos");
+        final CollectionReference data = db.collection(INFOS);
         data.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -64,7 +66,7 @@ public class InfosAsyncTask  extends AsyncTask<Void, Void, List<DocumentSnapshot
         super.onPostExecute(documentSnapshots);
 
         Collections.shuffle(documentSnapshots);
-        textView.setText((String) documentSnapshots.get(0).get("description"));
+        textView.setText((String) documentSnapshots.get(0).get(DESCRIPTION));
     }
 
 }

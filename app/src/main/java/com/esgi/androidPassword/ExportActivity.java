@@ -38,7 +38,6 @@ import static com.esgi.androidPassword.constant.AndroidPasswordConstant.SIGNED_I
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.SIGN_IN_REQUEST_CODE;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.START_SIGN_IN;
 import static com.esgi.androidPassword.constant.AndroidPasswordConstant.UNABLE_TO_WRITE_FILE_CONTENTS;
-import static java.security.AccessController.getContext;
 
 public class ExportActivity extends AppCompatActivity {
 
@@ -66,7 +65,7 @@ public class ExportActivity extends AppCompatActivity {
             if (isAuthenticated) {
                 Toast.makeText(
                         context,
-                        "Déjà authentifié !",
+                        getString(R.string.already_connected),
                         Toast.LENGTH_SHORT
                 ).show();
             }
@@ -186,7 +185,7 @@ public class ExportActivity extends AppCompatActivity {
                     isAuthenticated = true;
                     Toast.makeText(
                             context,
-                            "Connexion avec succès",
+                            getString(R.string.connexion_success),
                             Toast.LENGTH_SHORT
                     ).show();
                     btnExport.setEnabled(true);

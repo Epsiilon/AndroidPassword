@@ -1,2 +1,3 @@
 
+usquid:S14505"XRemove the "btnSignIn" field and declare it as a local variable in the relevant methods.(ˆÕ8’‡”á’-
 wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÍÃªºÿÿÿÿÿ
