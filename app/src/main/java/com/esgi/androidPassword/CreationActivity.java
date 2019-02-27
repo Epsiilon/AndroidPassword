@@ -45,7 +45,7 @@ public class CreationActivity extends AppCompatActivity {
                     cm.setText(passwordGenerated.getText());
 
                     StringBuilder txtToast = new StringBuilder();
-                    txtToast.append(getString(R.string.wrong_password));
+                    txtToast.append(getString(R.string.copy_msg));
                     txtToast.append(passwordGenerated.getText().toString());
 
                     Toast.makeText(v.getContext(), txtToast, Toast.LENGTH_SHORT).show();

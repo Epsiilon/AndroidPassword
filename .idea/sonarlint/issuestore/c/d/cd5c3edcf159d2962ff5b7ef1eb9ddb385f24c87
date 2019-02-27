@@ -1,5 +1,2 @@
 
 wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÍÃªºÿÿÿÿÿ
-Psquid:S1135_"2Complete the task associated to this TODO comment.(ÁÎËá8Öœàá’-
-squid:UselessImportCheck"VRemove this unused import 'com.esgi.androidPassword.constant.AndroidPasswordConstant'.(âç…¼8Öœàá’-
-xsquid:UselessImportCheck"HRemove this unused import 'com.esgi.androidPassword.util.PasswordUtils'.(Ÿ‘§üüÿÿÿÿ8Öœàá’-

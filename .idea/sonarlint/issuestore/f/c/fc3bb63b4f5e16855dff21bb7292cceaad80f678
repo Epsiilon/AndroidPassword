@@ -1,0 +1,14 @@
+
+"squid:ClassVariableVisibilityCheck?"QMake notes a static final constant or non-public and provide accessors if needed.(°‡Ì¬
+9squid:S2386"Make this member "protected".(£‚¦ÿÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(Äé‰Êÿÿÿÿÿ
+4squid:S2386"Make this member "protected".(ŞÍÏÿ
+"squid:ClassVariableVisibilityCheck<"QMake title a static final constant or non-public and provide accessors if needed.(Å¬õ
+‡"squid:ClassVariableVisibilityCheck>"TMake password a static final constant or non-public and provide accessors if needed.(¼şòüÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ëìç©øÿÿÿÿ
+Usquid:UnusedPrivateMethod."0Remove this unused private "makeDetails" method.(êïÖŸ
+"squid:ClassVariableVisibilityCheck;"NMake id a static final constant or non-public and provide accessors if needed.(Â¥Šˆøÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheck="TMake username a static final constant or non-public and provide accessors if needed.(Ü±›Ô
+Nsquid:S1135"2Complete the task associated to this TODO comment.(Ã€Ğûÿÿÿÿ
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(£‚¦ÿÿÿÿÿ
+psquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŞÍÏÿ

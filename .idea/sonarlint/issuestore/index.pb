@@ -23,3 +23,13 @@ Bapp/src/main/java/com/esgi/androidPassword/util/PasswordUtils.java,4/7/4758f0c
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+{
+Kapp/src/main/java/com/esgi/androidPassword/KeepSecureConfigureActivity.java,e/a/eaf49ff267a05fe2fac304096a57b07b0726da25
+x
+Happ/src/main/java/com/esgi/androidPassword/ExportPasswordsAsyncTask.java,3/e/3e9fa4eb34c637afaec9327405b3ebb9b3319ba5
+r
+Bapp/src/main/java/com/esgi/androidPassword/dummy/DummyContent.java,f/c/fc3bb63b4f5e16855dff21bb7292cceaad80f678
+n
+>app/src/main/java/com/esgi/androidPassword/InfosAsyncTask.java,0/e/0e3af69d85b6f27d177460cc2d08d316f7c2c7a2
+€
+Papp/src/main/java/com/esgi/androidPassword/constant/AndroidPasswordConstant.java,4/b/4b4cf9b1337c98e023e58162cb176ff1b2c7c180

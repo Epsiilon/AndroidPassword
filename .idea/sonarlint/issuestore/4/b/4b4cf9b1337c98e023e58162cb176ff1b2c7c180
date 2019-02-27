@@ -1,0 +1,9 @@
+
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨…þý
+msquid:S2068
+"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(óá­¢
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(¢ºÓ£
+hsquid:S2068"Q'PWD' detected in this expression, review this potentially hard-coded credential.(€µö–
+rsquid:S2068#"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(ÕµŠÔøÿÿÿÿ
+lsquid:S2068)"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(«ö°5
+ysquid:S2068-"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(ÊÚ­¿ÿÿÿÿÿ8×Ç¸ã’-
