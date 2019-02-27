@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.esgi.androidPassword.constant.AndroidPasswordConstant;
 import com.esgi.androidPassword.util.PasswordUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -20,10 +21,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.Nullable;
 
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.ERROR_CRYPTING_PASSWORD;
-import static com.esgi.androidPassword.constant.AndroidPasswordConstant.ERROR_DURING_REQUEST;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.*;
 
 public class ConnectionActivity extends AppCompatActivity {
+
+    private static final String DOCUMENT_PATH = "1";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -43,7 +45,7 @@ public class ConnectionActivity extends AppCompatActivity {
             }
 
             private void checkPassword(final View v, final String editTextValue) {
-                DocumentReference user = db.collection("user").document("1");
+                DocumentReference user = db.collection(USER).document(DOCUMENT_PATH);
                 user.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -52,7 +54,7 @@ public class ConnectionActivity extends AppCompatActivity {
 
                             String cryptedPassword = getPassword(editTextValue);
 
-                            if (doc.get("passwordKey").equals(cryptedPassword)) {
+                            if (doc.get(PASSWORD_KEY).equals(cryptedPassword)) {
                                 startCreationActivity();
                             } else {
                                 Toast.makeText(
@@ -84,13 +86,14 @@ public class ConnectionActivity extends AppCompatActivity {
         try {
             cryptedPassword = PasswordUtils.encryptToAES(editTextValue);
         } catch (Exception e) {
-            Log.e(ERROR_CRYPTING_PASSWORD, "Error during crypting password {}" +
-                    e.getMessage());
+            Log.e(CONNECTION_ACTIVITY, ERROR_CRYPTING_PASSWORD, e);
         }
 
         final StringBuilder password = new StringBuilder();
-        password.append(cryptedPassword.substring(0, cryptedPassword.length() -1));
-        password.append("\\n");
+        if (null != cryptedPassword) {
+            password.append(cryptedPassword.substring(0, cryptedPassword.length() -1));
+            password.append("\\n");
+        }
 
         return password.toString();
     }

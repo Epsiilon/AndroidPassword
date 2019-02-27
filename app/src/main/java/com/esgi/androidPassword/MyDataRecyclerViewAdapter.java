@@ -83,7 +83,7 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
         holder.mItem = mValues.get(position);
         holder.mTitleView.setText(mValues.get(position).title);
         holder.mUsername.setText(mValues.get(position).username);
-        holder.mPassword.setText("****");
+        holder.mPassword.setText(STAR);
         holder.mNotes.setText(mValues.get(position).notes);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -102,11 +102,16 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
             @Override
             public void onClick(final View v) {
 
-                DocumentReference user = db.collection("datas").document(mValues.get(position).id);
+                DocumentReference user = db.collection(DATAS).document(mValues.get(position).id);
                 user.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d("d", "DocumentSnapshot successfully deleted!");
+                        Log.d(MY_DATA_RECYCLER, DOCUMENT_SNAPSHOT_SUCCESSFULLY_DELETED);
+                        Toast.makeText(
+                                v.getContext(),
+                                v.getContext().getString(R.string.success_delete),
+                                Toast.LENGTH_SHORT
+                        ).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -114,7 +119,7 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
                         Log.e(ERROR_DURING_REQUEST,  e.getMessage());
                         Toast.makeText(
                                 v.getContext(),
-                                "erreur",
+                                v.getContext().getString(R.string.error_suppress),
                                 Toast.LENGTH_SHORT
                         ).show();
                     }
@@ -161,7 +166,7 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
                     try {
                         holder.mPassword.setText(PasswordUtils.decryptFromAES(mValues.get(position).password));
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Log.e(RECYCLER_VIEW, ERROR_DURING_DESCRIPTING_PASSWORD, e);
                     }
                 } else {
                     holder.mPassword.setText(STAR);
@@ -202,6 +207,8 @@ public class MyDataRecyclerViewAdapter extends RecyclerView.Adapter<MyDataRecycl
                 case REMOVED:
                     mValues.remove(dc.getOldIndex());
                     notifyItemRemoved(dc.getOldIndex());
+                    break;
+                default:
                     break;
             }
         }

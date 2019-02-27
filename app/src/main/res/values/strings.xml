@@ -40,4 +40,13 @@
     <string name="add_widget">Add widget</string>
     <string name="recommandation">Recommandation</string>
 
+    <string name="copy_msg">Copié : </string>
+    <string name="enter_password">Saisir une longueur du mot de passe</string>
+    <string name="enter_chiffre">Saisir une longueur de chiffre</string>
+    <string name="enter_speciaux">Saisir un nombre de caractères spéciaux</string>
+    <string name="success_delete">Supression effectuée</string>
+    <string name="connexion_success">Connexion avec succès</string>
+    <string name="already_connected">Déjà authentifié !</string>
+    <string name="error_suppress">Une erreur s\'est produite</string>
+
 </resources>

@@ -42,4 +42,18 @@ public class AndroidPasswordConstant {
     public static final String STAR = "****";
     public static final String COPIE = "Copié : ";
     public static final String INSUFFICIENT_SPECIAL = "INSUFFICIENT_SPECIAL";
+    public static final String PASSWORD_KEY = "passwordKey";
+    public static final String USER = "user";
+    public static final String CONNECTION_ACTIVITY = "ConnectionActivity";
+    public static final String ID = "id";
+    public static final String INFOS = "infos";
+    public static final String DESCRIPTION = "description";
+    public static final String APPWIDGET = "APPWIDGET";
+    public static final String ON_UPDATE = "onUpdate";
+    public static final String UPDATED = "UPDATED";
+    public static final String ON_DELETED = "onDeleted";
+    public static final String ON_DISABLED = "onDisabled";
+    public static final String ON_ENABLED = "onEnabled";
+    public static final String MY_DATA_RECYCLER = "MyDataRecycler";
+    public static final String DOCUMENT_SNAPSHOT_SUCCESSFULLY_DELETED = "DocumentSnapshot successfully deleted!";
 }

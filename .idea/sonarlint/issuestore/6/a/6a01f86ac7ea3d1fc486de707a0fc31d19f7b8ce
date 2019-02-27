@@ -1,10 +1,12 @@
 
+€"squid:ClassVariableVisibilityCheckà"QMake mItem a static final constant or non-public and provide accessors if needed.(üŠ¯¿
 wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÍÃªºÿÿÿÿÿ
+Jsquid:S1135¸"2Complete the task associated to this TODO comment.(‡ñÅ¼
+lsquid:S2259»"TA "NullPointerException" could be thrown; "queryDocumentSnapshots" is nullable here.(¬Şˆ¨
+/squid:S2176Õ"Rename this class.(Â×Öúÿÿÿÿ
 h
-squid:S128¶"LEnd this switch case with an unconditional break, return or throw statement.(Ú€¬ùşÿÿÿÿ
-€"squid:ClassVariableVisibilityCheckÕ"QMake mItem a static final constant or non-public and provide accessors if needed.(üŠ¯¿
-Nsquid:S1135)"2Complete the task associated to this TODO comment.(„Ïİ˜ÿÿÿÿÿ
-Jsquid:S1135­"2Complete the task associated to this TODO comment.(‡ñÅ¼
-lsquid:S2259°"TA "NullPointerException" could be thrown; "queryDocumentSnapshots" is nullable here.(¬Şˆ¨
-/squid:S2176Ê"Rename this class.(Â×Öúÿÿÿÿ
-@squid:S1148™"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+squid:S128Á"LEnd this switch case with an unconditional break, return or throw statement.(Ú€¬ùşÿÿÿÿ
+Ssquid:S1135"2Complete the task associated to this TODO comment.(„Ïİ˜ÿÿÿÿÿ8²ÄèŞ’-
+Isquid:S1604"(Make this anonymous inner class a lambda(üÜ•Äøÿÿÿÿ8²ÄèŞ’-
+Isquid:S1604"(Make this anonymous inner class a lambda(œÁÈÌşÿÿÿÿ8²ÄèŞ’-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8²ÄèŞ’-

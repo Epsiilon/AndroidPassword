@@ -8,12 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.esgi.androidPassword.dummy.DummyContent.DummyItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.DATAS;
+import static com.esgi.androidPassword.constant.AndroidPasswordConstant.ID;
 
 /**
  * A fragment representing a list of Items.
@@ -54,23 +55,11 @@ public class DataFragment extends Fragment {
 
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
             FirebaseFirestore db = FirebaseFirestore.getInstance();
-            Query query = db.collection("datas").orderBy("id");
+            Query query = db.collection(DATAS).orderBy(ID);
             adapter = new MyDataRecyclerViewAdapter(query, mListener);
             recyclerView.setAdapter(adapter);
         }
         myView = inflater.inflate(R.layout.fragment_data, container, false);
-
-        Button btnDelete = myView.findViewById(R.id.delete);
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                Toast.makeText(
-                        v.getContext(),
-                        "couo",
-                        Toast.LENGTH_SHORT
-                ).show();
-            }
-        });
 
         return view;
     }
@@ -115,7 +104,6 @@ public class DataFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onListFragmentInteraction(DummyItem item);
     }
 }
